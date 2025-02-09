@@ -1,0 +1,125 @@
+:root {
+  --background-color: #2e1d82;
+  --text-color: rgb(232, 232, 100);
+  --btn-color: #e76734;
+  --hover-color: #f14b09;
+}
+
+body {
+  display: flex;
+  font-family: "Roboto", sans-serif;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  margin: 0px;
+  background-color: var(--background-color);
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+  padding: 20px;
+}
+
+#title {
+  font-family: "Barriecito", sans-serif;
+  font-size: 50px;
+  margin-bottom: 0px;
+}
+
+#subtitle {
+  font-style: italic;
+  font-size: 20px;
+}
+
+#joke-container {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  height: 200px;
+}
+
+#joke-text {
+  font-family: "Barriecito", sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+  color: black;
+}
+
+#new-joke-btn {
+  background-color: var(--btn-color);
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 12px 24px; /* Padding to make the button larger */
+  border: none; /* Remove default border */
+  border-radius: 30px;
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-align: center;
+  margin: 0px;
+}
+
+#new-joke-btn:hover {
+  background-color: var(--hover-color); /* Darker color on hover */
+  transform: scale(1.1); /* Button moves up slightly */
+}
+
+/* Active state (when the button is clicked) */
+#new-joke-btn:active {
+  transform: translateY(2px); /* Button presses down when clicked */
+}
+
+.rate-btn {
+  background-color: var(--btn-color);
+  border: none;
+  width: 30px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: all 0.2s ease;
+  border-radius: 50%;
+}
+
+.rate-btn:hover {
+  background-color: var(--hover-color);
+  transform: scale(1.25);
+}
+
+#saved-title {
+  margin-bottom: 5px;
+}
+
+#saved-jokes {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  margin-top: 0px;
+  border-radius: 5px;
+}
+
+#joke-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+#joke-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+#joke-list li:last-child {
+  border-bottom: none;
+}
+
+#chart-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
