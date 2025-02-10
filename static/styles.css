@@ -41,11 +41,12 @@ body {
   margin-bottom: 5px;
   border-radius: 5px;
   height: 200px;
+  overflow: scroll;
 }
 
 #joke-text {
   font-family: "Barriecito", sans-serif;
-  font-size: 25px;
+  font-size: 40px;
   margin-bottom: 20px;
   color: black;
 }
@@ -65,13 +66,13 @@ body {
 }
 
 #new-joke-btn:hover {
-  background-color: var(--hover-color); /* Darker color on hover */
-  transform: scale(1.1); /* Button moves up slightly */
+  background-color: var(--hover-color);
+  transform: scale(1.1);
 }
 
-/* Active state (when the button is clicked) */
+/* when the button is clicked */
 #new-joke-btn:active {
-  transform: translateY(2px); /* Button presses down when clicked */
+  transform: translateY(2px);
 }
 
 .rate-btn {
@@ -92,26 +93,66 @@ body {
   transform: scale(1.25);
 }
 
-#saved-title {
+#stat-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.section-sub {
   margin-bottom: 5px;
 }
 
-#saved-jokes {
+#saved-jokes-container {
   background-color: #fff;
   padding: 20px;
   margin-bottom: 20px;
   margin-top: 0px;
   border-radius: 5px;
+  color: black;
+  height: 300px;
+  overflow: scroll;
+  margin-right: 20px;
 }
 
 #joke-list {
   list-style-type: none;
   padding: 0;
+  font-size: 20px;
 }
 
 #joke-list li {
   padding: 10px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid;
+  border-image: linear-gradient(to right, #ff4081, #ffb74d, #4caf50) 1; /* Rainbow gradient */
+  font-size: 18px;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333; /* Normal color */
+}
+
+#joke-list li:hover {
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Hover color based on the rating color in the donut chart */
+#joke-list li[data-colorcode="1"]:hover {
+  color: rgba(255, 99, 132, 1);
+}
+
+#joke-list li[data-colorcode="2"]:hover {
+  color: rgba(54, 162, 235, 1);
+}
+
+#joke-list li[data-colorcode="3"]:hover {
+  color: rgb(196, 143, 9);
+}
+
+#joke-list li[data-colorcode="4"]:hover {
+  color: rgba(75, 192, 192, 1);
+}
+
+#joke-list li[data-colorcode="5"]:hover {
+  color: rgba(153, 102, 255, 1);
 }
 
 #joke-list li:last-child {
@@ -122,4 +163,5 @@ body {
   background-color: #fff;
   padding: 20px;
   border-radius: 5px;
+  height: 300px;
 }

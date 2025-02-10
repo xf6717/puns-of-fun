@@ -63,5 +63,23 @@ def rate_joke():
         conn.close()  
 
 
+@app.route('/api/joke-list', methods=['GET'])
+def get_joke_list():
+    try:
+        # retrieve the list of jokes saved in the database 
+        conn = sqlite3.connect('puns_of_fun.db')
+        c = conn.cursor()
+        c.execute('SELECT id, joke, rating FROM jokes')
+        jokes = [{'id': row[0], 'joke': row[1], 'rating': row[2]} for row in c.fetchall()]
+        app.logger.info(f"Got {len(jokes)} jokes")
+        return jsonify(jokes)
+        
+    except sqlite3.Error as e:
+        app.logger.error(f"Database error: {e}")
+        return jsonify({'error': 'Failed to retrieve the list of jokes'}), 500  
+
+    finally:
+        conn.close()  
+
 if __name__ == '__main__':
     app.run(debug=True)
